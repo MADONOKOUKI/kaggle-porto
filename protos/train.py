@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 
 from sklearn.linear_model import LogisticRegression
-
+from logging import StreamHandler , DEBUG , Formatter, FileHandler,getLogger
 from load_data import load_train_data , load_test_data
 
 logger = getLogger(__name__)
@@ -38,7 +38,7 @@ if __name__  == '__main__':
 
   logger.info('prepared data ended')
 
-  clf = LogisticeRegression(random_state = 0)
+  clf = LogisticRegression(random_state = 0)
   clf.fit(x_train,y_train)
 
   logger.info('learning phase ended {} :'.format(x_test.shape))
